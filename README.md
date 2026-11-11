@@ -16,21 +16,44 @@ This repository analyses the Dunnhumby Complete Journey data to evaluate Kroger 
 
 ## Recommended workflow
 
-Run commands from the project root. The scripts also resolve the project root from their own file locations, so they do not depend on the current working directory.
+Run commands from the project root. The scripts resolve the project root from their own file locations, so they do not depend on the current working directory.
 
-1. Prepare and validate the raw data:
+### 1. Create the Python environment
+
+```bash
+python3 -m venv .venv-course-fit
+source .venv-course-fit/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python -m ipykernel install \
+  --prefix .venv-course-fit \
+  --name kroger-project \
+  --display-name "Kroger Project (.venv-course-fit)"
+```
+
+### 2. Add the source data
+
+Obtain the Dunnhumby Complete Journey CSV files from the authorised dataset source and place the eight files listed in [`data/README.md`](data/README.md) inside `data/raw/`.
+
+The raw and processed datasets are deliberately excluded from Git because several files exceed GitHub's 100 MB individual-file limit. They may also be subject to the original dataset's distribution terms.
+
+### 3. Clean and prepare the data
+
+Prepare and validate the raw data:
 
    ```bash
    .venv-course-fit/bin/python src/data_cleaning/prepare_data.py
    ```
 
-2. Build the panel-regression dataset:
+Build the panel-regression dataset:
 
    ```bash
    .venv-course-fit/bin/python src/data_cleaning/build_regression_panel.py
    ```
 
-3. Open the main analysis:
+### 4. Run the analysis
+
+Open the main analysis:
 
    ```text
    analysis.ipynb
@@ -53,5 +76,6 @@ Run commands from the project root. The scripts also resolve the project root fr
 
 - `data/raw/` contains source data and should be treated as immutable.
 - `data/processed/` contains analysis-ready datasets and its generated data-quality report.
-- `data/processed_data.zip` is the supplied packaged copy of processed outputs. The active analysis reads extracted files from `data/processed/`.
+- The optional local `data/processed_data.zip` archive is not needed: both cleaning scripts reproduce the required processed files.
+
 
