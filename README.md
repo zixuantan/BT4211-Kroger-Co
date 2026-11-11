@@ -33,7 +33,7 @@ python -m ipykernel install \
 
 ### 2. Add the source data
 
-Obtain the Dunnhumby Complete Journey CSV files from the authorised dataset source and place the eight files listed in [`data/README.md`](data/README.md) inside `data/raw/`.
+Obtain [Dunnhumby – The Complete Journey from Kaggle](https://www.kaggle.com/datasets/frtgnn/dunnhumby-the-complete-journey) through your authorised Kaggle account, then place the eight CSV files listed in [`data/README.md`](data/README.md) inside `data/raw/`.
 
 The raw and processed datasets are deliberately excluded from Git because several files exceed GitHub's 100 MB individual-file limit. They may also be subject to the original dataset's distribution terms.
 

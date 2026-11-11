@@ -2,6 +2,10 @@
 
 The data files are not stored in Git because several exceed GitHub's 100 MB per-file limit and redistribution remains subject to the original Dunnhumby Complete Journey data terms.
 
+Obtain the dataset through an authorised Kaggle account:
+
+**[Dunnhumby – The Complete Journey](https://www.kaggle.com/datasets/frtgnn/dunnhumby-the-complete-journey)**
+
 Create `data/raw/` and place these original CSV files inside it:
 
 ```text
