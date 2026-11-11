@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.tmp/
+.venv*/
+
+# Large source and generated data
+data/raw/
+data/processed/
+data/*.zip
+archive/*.zip
+
+# Reproducible generated outputs
+

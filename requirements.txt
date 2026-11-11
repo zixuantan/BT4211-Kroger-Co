@@ -1,0 +1,13 @@
+duckdb
+ipykernel
+jupyter
+matplotlib
+nbconvert
+nbformat
+numpy
+pandas
+pyarrow
+scikit-learn
+scipy
+statsmodels
+
