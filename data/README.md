@@ -19,12 +19,11 @@ product.csv
 transaction_data.csv
 ```
 
-From the repository root, generate all analysis-ready files with:
+From the repository root, generate all analysis-ready files with one command:
 
 ```bash
 .venv-course-fit/bin/python src/data_cleaning/prepare_data.py
-.venv-course-fit/bin/python src/data_cleaning/build_regression_panel.py
 ```
 
-The scripts create `data/processed/`, including the campaign, promotion, store-profile and regression-panel Parquet files required by `analysis.ipynb`.
+The script creates `data/processed/`, including the campaign, promotion, store-profile and regression-panel Parquet files required by `analysis.ipynb`.
 

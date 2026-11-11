@@ -45,11 +45,7 @@ Prepare and validate the raw data:
    .venv-course-fit/bin/python src/data_cleaning/prepare_data.py
    ```
 
-Build the panel-regression dataset:
-
-   ```bash
-   .venv-course-fit/bin/python src/data_cleaning/build_regression_panel.py
-   ```
+This single command creates every processed dataset required by `analysis.ipynb`, including `regression_panel.parquet`. The regression panel can still be rebuilt independently with `src/data_cleaning/build_regression_panel.py` if needed.
 
 ### 4. Run the analysis
 

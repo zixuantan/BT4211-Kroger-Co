@@ -679,6 +679,13 @@ def main() -> None:
     ]
     write_report(audits, validations, store_checks, causal_audit, panel_checks, campaign_checks, transactions)
 
+    # Build the additional product-store-week dataset required by the panel-
+    # regression section of analysis.ipynb. Keeping this in the main preparation
+    # entry point gives users a single raw-to-analysis-ready command.
+    from build_regression_panel import build_regression_panel
+
+    build_regression_panel()
+
     print("Created:")
     for path in sorted(OUTPUT_DIR.glob("*.parquet")):
         print(f"  {path.relative_to(PROJECT_ROOT)} ({path.stat().st_size / 1024**2:,.1f} MiB)")
