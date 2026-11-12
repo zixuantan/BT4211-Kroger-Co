@@ -10,4 +10,5 @@ pyarrow
 scikit-learn
 scipy
 statsmodels
+linearmodels
 
