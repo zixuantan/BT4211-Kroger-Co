@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Build product-store-week panel used in the panel-regression section.
 Run with:
     python src/data_cleaning/build_regression_panel.py
