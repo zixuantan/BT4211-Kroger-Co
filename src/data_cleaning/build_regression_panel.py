@@ -19,7 +19,7 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 con = duckdb.connect()
 
 #identify display and mailer support, as long as there is a non-zero for that particular pdt-store-week, then just take it as it has some kind of support 
-con.execute("""
+con.execute(f"""
     CREATE OR REPLACE TEMP TABLE clean_placements AS
     SELECT
         PRODUCT_ID,
@@ -42,7 +42,7 @@ con.execute("""
 
 
 #aggregate weekly product-store sales from the transaction data
-con.execute("""
+con.execute(f"""
     CREATE OR REPLACE TEMP TABLE weekly_sales AS
     SELECT
         PRODUCT_ID,
@@ -76,7 +76,7 @@ con.execute("""
 """)
 
 #identify coupon-eligible product-weeks
-con.execute("""
+con.execute(f"""
     CREATE OR REPLACE TEMP TABLE coupon_weeks AS
     SELECT DISTINCT
         c.PRODUCT_ID,
@@ -139,7 +139,7 @@ con.execute("""
 
 
 #save completed regression dataset
-con.execute("""
+con.execute(f"""
     COPY regression_panel
     TO '{OUTPUT_PATH.as_posix()}'
     (FORMAT PARQUET)
